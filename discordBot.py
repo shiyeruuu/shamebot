@@ -27,6 +27,7 @@ async def on_voice_state_update(member, before, after):
 	guild = member.guild
 
 	general = client.get_channel(1508889461566738623)
+	print(f'channel found: {general}')
 	if not general:
 		return
 
