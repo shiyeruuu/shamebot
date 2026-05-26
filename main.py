@@ -26,7 +26,8 @@ async def on_voice_state_update(member, before, after):
 
 	guild = member.guild
 
-	general = discord.utils.get(guild.text_channels, name='╭⌑﹒ꔫ﹒overall-chat﹒⟢')
+	general = client.get_channel(1508889461566738623)
+	print(f'channel found: {general}')
 	if not general:
 		return
 
@@ -43,13 +44,9 @@ async def on_voice_state_update(member, before, after):
 	if disconnector.id == 902424435489923102:
 		return
 	
-	await general.send(
-			f'**{member.display_name}** was disconnected from '
-			f'**{before.channel.name}** by **{disconnector.display_name} **.'
-			f'**SHAME ON YOU!!!"**'
-		)
-	return
-
+	embed = discord.Embed(title="Member Disconnected", description=f"{member.mention} was disconnected from {before.channel.mention} by {disconnector.mention} SHAME ON YOU!")
+	embed.set_image(url='https://imgur.com/a/jBctAAF')
+	await general.send(embed=embed)
 
 client.run(os.getenv('DISCORD_TOKEN'))
 
