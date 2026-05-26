@@ -26,7 +26,7 @@ async def on_voice_state_update(member, before, after):
 
 	guild = member.guild
 
-	general = discord.utils.get(guild.text_channels, name='╭⌑﹒ꔫ﹒overall-chat﹒⟢')
+	general = discord.utils.get(guild.text_channels, name='┊・⊱・shining-shame-ring')
 	if not general:
 		return
 
