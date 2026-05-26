@@ -35,7 +35,7 @@ async def on_voice_state_update(member, before, after):
 	
 	async for entry in guild.audit_logs(limit=1, action=discord.AuditLogAction.member_disconnect):
 		age = (datetime.datetime.now(datetime.timezone.utc) - entry.created_at).total_seconds()
-		if age > 2:
+		if age > 10:
 			return
 		disconnector = entry.user
 		if disconnector.bot:
