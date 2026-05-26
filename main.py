@@ -21,7 +21,9 @@ async def on_voice_state_update(member, before, after):
 	if member.bot:
 		return
 
-	if before.channel is None or after.channel is not None:
+	if before.channel is not None and after.channel is None:
+		pass
+	else:
 		return
 
 	guild = member.guild
