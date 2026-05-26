@@ -45,7 +45,7 @@ async def on_voice_state_update(member, before, after):
 			return
 	
 		embed = discord.Embed(title="Member Disconnected", description=f"{member.mention} was disconnected from {before.channel.mention} by {disconnector.mention} SHAME ON YOU!")
-		embed.set_image(url='https://imgur.com/a/jBctAAF')
+		embed.set_image(url='https://i.imgur.com/C2qEe7H.jpeg')
 		await general.send(embed=embed)
 		return
 client.run(os.getenv('DISCORD_TOKEN'))
