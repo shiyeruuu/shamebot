@@ -34,7 +34,8 @@ async def on_voice_state_update(member, before, after):
 	await asyncio.sleep(1)
 	
 	async for entry in guild.audit_logs(limit=1, action=discord.AuditLogAction.member_disconnect):
-		if age > 30:
+		age = (datetime.datetime.now(datetime.timezone.utc) - entry.created_at).total_seconds()
+		if age > 2:
 			return
 		disconnector = entry.user
 		if disconnector.bot:
